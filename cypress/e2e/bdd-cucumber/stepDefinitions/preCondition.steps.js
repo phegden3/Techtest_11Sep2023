@@ -1,15 +1,9 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import HomePage from "../pages/homePage.page";
 
-// Given('I access the test URL', () => {
-//     cy.visit('https://cms.demo.katalon.com/');
-//     cy.get('a').contains('Cart').click();
-
-//     cy.contains('Cart');
-// });
+const homePage = new HomePage();
 
 Given('I access the test URL', () => {
-    cy.visit('/');
-    // cy.get('a').contains('Cart').click();
-
-    // cy.contains('Cart');
+    homePage.accessBaseURL();
+    homePage.verifyHomePageLanding();
 });
